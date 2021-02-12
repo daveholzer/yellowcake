@@ -7,13 +7,15 @@ backend:
 media_library:
   name: uploadcare
   config:
-    publicKey: f1bfd56071bc959d0ebf
-    multiple: false
-    tabs: 'file camera url facebook gdrive'
-    effects: 'crop,rotate,enhance,grayscale'
-    imageShrink: '2000x2000'
-    previewStep: true
-    clearable: true
+    cloud_name: wishinone
+    api_key: 651168275326162
+    # publicKey: f1bfd56071bc959d0ebf
+    # multiple: false
+    # tabs: 'file camera url facebook gdrive'
+    # effects: 'crop,rotate,enhance,grayscale'
+    # imageShrink: '2000x2000'
+    # previewStep: true
+    # clearable: true
 
 collections: # A list of collections the CMS should be able to edit
   - name: 'pages'
