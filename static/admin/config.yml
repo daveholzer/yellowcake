@@ -5,6 +5,16 @@ backend:
 
 # display_url: https://gatsbro.netlify.com # This url will display in the top-right of the CMS
 media_library:
+  name: uploadcare
+  config:
+    publicKey: f1bfd56071bc959d0ebf
+    multiple: false
+    tabs: 'file camera url facebook gdrive'
+    effects: 'crop,rotate,enhance,grayscale'
+    imageShrink: '2000x2000'
+    previewStep: true
+    clearable: true
+media_library:
   name: cloudinary
   config:
     cloud_name: wishinone
