@@ -10,6 +10,7 @@ import { BlogIndexTemplate } from '../templates/BlogIndex'
 import { SinglePostTemplate } from '../templates/SinglePost'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary';
+import { LoginPageTemplate } from '../templates/LoginPage'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -42,4 +43,7 @@ CMS.registerPreviewTemplate('blog-page', ({ entry }) => (
 ))
 CMS.registerPreviewTemplate('posts', ({ entry }) => (
   <SinglePostTemplate {...entry.toJS().data} />
+))
+CMS.registerPreviewTemplate('login-page', ({ entry }) => (
+  <LoginPageTemplate {...entry.toJS().data} />
 ))
