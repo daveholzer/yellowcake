@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 import { Menu, X } from 'react-feather'
+import { isLoggedIn } from "../utils/auth"
 import Logo from './Logo'
 
 import './Nav.css'
@@ -37,6 +38,7 @@ export class Navigation extends Component {
       this.toggleSubNav(subNav)
     }
   }
+  
   render() {
     const { active } = this.state,
       { subNav } = this.props,
@@ -72,6 +74,8 @@ export class Navigation extends Component {
           </Link>
           <div className="Nav--Links">
             <NavLink to="/">Home</NavLink>
+            {isLoggedIn() && (
+              <>
             <NavLink to="/components/">Components</NavLink>
             <div
               className={`Nav--Group ${
@@ -111,7 +115,9 @@ export class Navigation extends Component {
             </div>
             <NavLink to="/default/">Default</NavLink>
             <NavLink to="/contact/">Contact</NavLink>
-            <NavLink to="/login/">Login</NavLink>
+            </>
+            )}
+            <NavLink to={"/login/"}>Residents</NavLink>
           </div>
           <button
             className="Button-blank Nav--MenuButton"

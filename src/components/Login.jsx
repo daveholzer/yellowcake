@@ -1,13 +1,28 @@
 import React from "react"
 import { navigate } from '@reach/router';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { setUser, isLoggedIn } from "../utils/auth"
+import { setUser, isLoggedIn, handleLogout } from "../utils/auth"
 import firebase from "gatsby-plugin-firebase"
 
 const Login = () => {
 
+  const logout = () => {
+    firebase.auth().signOut()
+    .then(function() {
+      handleLogout()
+      navigate('/')
+    })
+    .catch(function(error) {
+      console.log(error)
+    });    
+  }
+
   if (isLoggedIn()) {
-    navigate(`/app/profile`)
+    return (
+      <button onClick={logout}>Logout</button>
+    )
+
+    // navigate(`/default/`)
   }
 
   function getUiConfig(auth) {
@@ -21,7 +36,7 @@ const Login = () => {
       callbacks: {
         signInSuccessWithAuthResult: (result) => {
           setUser(result.user);
-          navigate('/app/profile');
+          navigate('/');
         }
       }
     };

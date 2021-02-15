@@ -13,6 +13,10 @@ export const setUser = user =>
   return !!user.email
 }
 
+export const handleLogout = () => {
+  isBrowser() && localStorage.removeItem('user');
+};
+
 export const logout = (firebase) => {
   return new Promise(resolve => {
     firebase.auth().signOut().then(function() {
