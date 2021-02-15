@@ -3,7 +3,7 @@ template: HomePage
 slug: ""
 title: Paseo de Palomas
 featuredImage: https://ucarecdn.com/f244a644-6da0-44e0-b413-d9528cc2fdb6/
-subtitle: " Welcome to the ultimate Gatsby and Netlify starter project."
+subtitle: " A Mobile Home Park for Older Persons"
 meta:
   description: This is a meta description.
   title: The Ultimate Gatsby Starter
